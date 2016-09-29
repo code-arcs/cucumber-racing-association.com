@@ -58,9 +58,8 @@ body {
     right: 200px;
     opacity: 0;
 
-    background-position: top center;
+    background: url('../img/slime.png') no-repeat top center;
     background-size: 100%;
-    background-repeat: no-repeat;
 
     animation: cucumber-drop;
     animation-duration: 20s;
@@ -92,6 +91,7 @@ footer {
     width: 100%;
     font-size: 0.6em;
 }
+
 footer a {
     color: #000;
     text-decoration: none;
