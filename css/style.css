@@ -1,0 +1,107 @@
+@keyframes cucumber-drop {
+    0% {
+        background-image: none;
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    2% {
+        background-image: url('../img/slime.png');
+    }
+    100% {
+        background-image: url('../img/slime.png');
+        opacity: 1;
+        height: 130vh;
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Pacifico', cursive;
+    overflow: hidden;
+}
+
+.wrapper {
+    height: 100%;
+    background-color: #f5f4d5;
+    box-shadow: inset 0 0 250px rgb(165, 146, 123);
+    overflow: hidden;
+}
+
+.title {
+    margin: 0;
+    padding-top: 150px;
+    text-align: center;
+    color: #755250;
+    font-size: 3em;
+    position: relative;
+    z-index: 9999;
+}
+
+.subtitle {
+    padding-top: 0;
+    font-size: 1em;
+    font-weight: 100;
+    color: rgba(117, 82, 80, 0.64);
+    z-index: 0;
+}
+
+.cucumber-wrap {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 200px;
+    opacity: 0;
+
+    background-position: top center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    animation: cucumber-drop;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+}
+
+.delay-1s {
+    animation-delay: 1s;
+}
+
+.cucumber {
+    position: absolute;
+    z-index: 999;
+}
+
+.finish-line {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    height: 32px;
+    background-image: url('../img/finish-line.png');
+}
+
+footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    padding-bottom: 10px;
+    width: 100%;
+    font-size: 0.6em;
+}
+footer a {
+    color: #000;
+    text-decoration: none;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
