@@ -1,24 +1,35 @@
 /* Cucumber-ya my lord! */
 (function () {
 
+    var socket = io();
+    socket.on('connect', function (data) {
+        socket.emit('join', 'Hello World from client');
+    });
+
+    socket.on('throwCucumber', throwCucumberToWindow);
+
     var minWidthOfCucumber = 35;
     var maxWidthOfCucumber = 55;
 
     document.body.addEventListener('click', function (event) {
-        throwCucumberToWindow(event.clientX, event.clientY, true);
+        socket.emit('throwCucumber', {x: event.clientX, y: event.clientY, now: true});
     }, false);
 
     document.body.addEventListener("touchstart", function (event) {
-        throwCucumberToWindow(event.touches[0].clientX, event.touches[0].clientY, true);
+        throwCucumberToWindow({x: event.touches[0].clientX, y: event.touches[0].clientY, now: true});
     }, false);
 
     for (var i = 0; i < getRandomInt(5, 15); i++) {
         var x = getRandomInt(maxWidthOfCucumber + 5, window.innerWidth - (maxWidthOfCucumber + 5));
         var y = getRandomInt(10, 120);
-        throwCucumberToWindow(x, y);
+        throwCucumberToWindow({x: x, y: y});
     }
 
-    function throwCucumberToWindow(x, y, now) {
+    function throwCucumberToWindow(data) {
+        const x = data.x;
+        const y = data.y;
+        const now = data.now;
+
         var width = getRandomInt(minWidthOfCucumber, maxWidthOfCucumber);
         var animationDuration = getRandomInt(25, 50);
 
