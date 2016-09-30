@@ -20,16 +20,16 @@ module.exports = class Cucumber {
 
     static _getBezier() {
         const bez = [
-            getRandomFloat(0.2, 0.8),
-            getRandomFloat(0.2, 0.5),
-            getRandomFloat(0.2, 0.5),
-            getRandomFloat(0.2, 0.5)
+            Cucumber._getRandomFloat(0.2, 0.8),
+            Cucumber._getRandomFloat(0.2, 0.5),
+            Cucumber._getRandomFloat(0.2, 0.5),
+            Cucumber._getRandomFloat(0.2, 0.5)
         ].join(', ');
 
         return 'cubic-bezier(' + bez + ')';
 
-        function getRandomFloat(min, max) {
-            return (Math.random() * (max - min)) + min;
-        }
+    }
+    static _getRandomFloat(min, max) {
+        return (Math.random() * (max - min)) + min;
     }
 };
