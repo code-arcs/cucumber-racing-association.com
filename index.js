@@ -20,11 +20,11 @@ io.on('connection', function (client) {
     client.on('throwCucumber', function (data) {
         thrownCucumbers++;
         io.emit('throwCucumber', Cucumber.create(data.x, data.y));
-        sendInfo(client);
+        sendInfo(io);
     });
 
     client.on('disconnect', function(data) {
-        sendInfo(client);
+        sendInfo(io);
     });
 
     client.on('timeout', function(){
