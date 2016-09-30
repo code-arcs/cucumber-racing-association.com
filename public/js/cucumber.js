@@ -7,8 +7,7 @@
         socket.emit('join', {windowWidth: window.innerWidth});
     });
     socket.on('throwCucumber', throwCucumberToWindow);
-    socket.on('thrownCucumbers', refreshCounter);
-
+    socket.on('info', refreshUI);
 
     document.body.addEventListener('click', function (event) {
         socket.emit('throwCucumber', {x: event.clientX  / window.innerWidth, y: event.clientY});
@@ -50,9 +49,18 @@
         document.querySelector('.wrapper').appendChild(cucumberWrap);
     }
 
+    function refreshUI(data) {
+        refreshCounter(data.thrownCucumbers);
+        refreshUserCounter(data.connectedUsers);
+    }
+
     function refreshCounterThrownByUser() {
         thrownCucumbers++;
         document.querySelector('.counter-own').innerText = thrownCucumbers;
+    }
+
+    function refreshUserCounter(count) {
+        document.querySelector('.counter-users').innerText = count;
     }
 
     function refreshCounter(count) {

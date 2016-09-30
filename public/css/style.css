@@ -58,6 +58,12 @@ body {
     z-index: 0;
 }
 
+.counter, .counter-own, .counter-users {
+    font-size: 1.7em;
+    padding: 0;
+    line-height: 0;
+}
+
 .cucumber-wrap {
     position: absolute;
     z-index: 1;
