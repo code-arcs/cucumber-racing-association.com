@@ -1,19 +1,23 @@
 /* Cucumber-ya my lord! */
 (function () {
+    var thrownCucumbers = 0;
 
     var socket = io();
     socket.on('connect', function () {
         socket.emit('join', {windowWidth: window.innerWidth});
     });
-
     socket.on('throwCucumber', throwCucumberToWindow);
+    socket.on('thrownCucumbers', refreshCounter);
+
 
     document.body.addEventListener('click', function (event) {
         socket.emit('throwCucumber', {x: event.clientX  / window.innerWidth, y: event.clientY});
+        refreshCounterThrownByUser();
     }, false);
 
     document.body.addEventListener("touchstart", function (event) {
         socket.emit('throwCucumber', {x: event.touches[0].clientX / window.innerWidth, y: event.touches[0].clientY});
+        refreshCounterThrownByUser();
     }, false);
 
     function throwCucumberToWindow(data) {
@@ -44,5 +48,14 @@
         cucumberWrap.appendChild(cucumber);
 
         document.querySelector('.wrapper').appendChild(cucumberWrap);
+    }
+
+    function refreshCounterThrownByUser() {
+        thrownCucumbers++;
+        document.querySelector('.counter-own').innerText = thrownCucumbers;
+    }
+
+    function refreshCounter(count) {
+        document.querySelector('.counter').innerText = count;
     }
 })();
