@@ -13,7 +13,7 @@
     }, false);
 
     document.body.addEventListener("touchstart", function (event) {
-        socket.emit('throwCucumber', {x: event.touches[0].clientX, y: event.touches[0].clientY});
+        socket.emit('throwCucumber', {x: event.touches[0].clientX / window.innerWidth, y: event.touches[0].clientY});
     }, false);
 
     function throwCucumberToWindow(data) {
