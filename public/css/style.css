@@ -19,11 +19,11 @@
 html, body {
     height: 100%;
     margin: 0;
+    overflow: hidden;
 }
 
 body {
     font-family: 'Pacifico', cursive;
-    overflow: hidden;
 }
 
 .wrapper {
@@ -45,7 +45,7 @@ body {
 
 .subtitle {
     padding-top: 0;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 100;
     color: rgba(117, 82, 80, 0.64);
     z-index: 0;
