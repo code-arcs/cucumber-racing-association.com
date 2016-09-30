@@ -1,0 +1,25 @@
+{
+  "name": "Cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Pandaros@github.com/code-arcs/cucumber-racing-association.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/code-arcs/cucumber-racing-association.com/issues"
+  },
+  "homepage": "https://github.com/code-arcs/cucumber-racing-association.com#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.4.8"
+  }
+}
