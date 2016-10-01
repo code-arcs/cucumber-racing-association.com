@@ -2,6 +2,7 @@
     0% {
         background-image: none;
         opacity: 0;
+        height: 0;
     }
     1% {
         opacity: 1;
@@ -12,12 +13,12 @@
     100% {
         background-image: url('../img/slime.png');
         opacity: 1;
-        height: 130vh;
     }
 }
 
 html, body {
     height: 100%;
+    max-height: 100%;
     margin: 0;
     overflow: hidden;
 }
