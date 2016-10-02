@@ -19,6 +19,7 @@
         refreshCounterThrownByUser();
     }, false);
 
+    document.querySelector('.wrapper').style.backgroundImage = "url('img/background/" + ((Math.ceil(Math.random() * 9999) % 2) + 1) + ".jpg')";
 
     function throwCucumberToWindow(data) {
         var width = data.width;
